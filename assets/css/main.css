@@ -1807,3 +1807,7 @@ body.is-preload #footer {
   overflow: hidden;
   transition: height 0.5s ease-in-out;
 }
+
+#output-text {
+  text-transform: initial;
+}
