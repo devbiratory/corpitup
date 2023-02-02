@@ -354,25 +354,31 @@ function onDOMReady() {
   });
   // Add click event listener to the generate button
   generateBtn.addEventListener("click", function() {
-    // Get the input text
+    // Get the input text 
+    
     const input = inputText.value;
-    fetch("http://localhost:3000/gpt3", {
+    // https://corpitup-backend.onrender.com/gpt3
+    // http://localhost:3000/gpt3
+    fetch("https://corpitup-backend.onrender.com/gpt3", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        data:
-          "Make this text sound professional, polite and corporate-ish, remove any unpleasant words or abuses or curses of any kind: " +
-          input
+        data: input
       })
     })
-      .then(res => res.json())
-      .then(data => {
-        outputTextSection.innerHTML = data.text;
-        setTimeout(() => {
-          outputSection.style.height = "auto";
-        }, 1000);
+      .then(res => {
+        console.log('res', res)
+        return res.json();
+      }).catch((e)=>{
+        console.log('here', e)
+      })
+      .then(res => {
+        console.log('data check ', res)
+        outputTextSection.innerHTML = res.text;
+
+        outputSection.style.height = "auto";
       })
       .catch(error => {
         console.error(error);
