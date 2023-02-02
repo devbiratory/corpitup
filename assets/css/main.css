@@ -1467,6 +1467,8 @@ body.is-preload #bg:before {
   margin-bottom: 0;
 }
 
+
+
 #header .content p {
   text-transform: uppercase;
   letter-spacing: 0.2rem;
@@ -1476,6 +1478,10 @@ body.is-preload #bg:before {
 
 #output p {
 	text-transform: initial;
+}
+
+#output-text {
+  text-transform: initial !important;
 }
 
 #header nav ul {
@@ -1808,6 +1814,3 @@ body.is-preload #footer {
   transition: height 0.5s ease-in-out;
 }
 
-#output-text {
-  text-transform: initial;
-}
